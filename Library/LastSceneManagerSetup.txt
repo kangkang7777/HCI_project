@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/KinectDemos/GesturesDemo/KinectGesturesDemo2.unity
+- path: Assets/my_scene/my_scene.unity
   isLoaded: 1
   isActive: 1

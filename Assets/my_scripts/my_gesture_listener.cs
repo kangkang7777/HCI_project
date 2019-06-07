@@ -10,11 +10,11 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
 		//姿势检测后触发的事件在这里写
 		if (gesture == "touch_jj") 
 		{
-			print("摸鸡鸡...");
+			print("摸鸡鸡..."+userId);
 		}
         if (gesture == "hands_over_head")
         {
-            print("手举过了头...");
+            print("手举过了头..." + userId);
         }
         return true;
 		//throw new System.NotImplementedException();
