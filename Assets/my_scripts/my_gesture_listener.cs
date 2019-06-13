@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
 {
+    public P1 p1;
+
 	//动作姿态完成
 	public bool GestureCompleted(long userId, int userIndex, string gesture, float confidence)
 	{
@@ -11,6 +13,7 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
 		if (gesture == "touch_jj") 
 		{
 			print("摸鸡鸡..."+userId);
+            p1.Laser();
 		}
         if (gesture == "hands_over_head")
         {
