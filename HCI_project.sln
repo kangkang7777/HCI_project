@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{40E45706-5651-D788-26C2-996F3B7821E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HCI_project", "Assembly-CSharp-firstpass.csproj", "{40E45706-5651-D788-26C2-996F3B7821E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{EF81D540-BDD5-A095-EB85-0B07196C0F06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HCI_project", "Assembly-CSharp.csproj", "{EF81D540-BDD5-A095-EB85-0B07196C0F06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{4875258F-27E8-EC9B-ECE5-60878E341B27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HCI_project", "Assembly-CSharp-Editor-firstpass.csproj", "{4875258F-27E8-EC9B-ECE5-60878E341B27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

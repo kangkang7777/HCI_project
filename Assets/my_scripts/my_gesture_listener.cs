@@ -15,9 +15,52 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
 			print("摸鸡鸡..."+userId);
             p1.Laser();
 		}
-        if (gesture == "hands_over_head")
+
+        //相同gesture识别时间需要有间隔
+        ////////////交互////////////
+        //或许需要加一个flag，让其只在开始界面能识别，防止误判
+        //确认，握手
+        if (gesture == "interact_click")
         {
-            print("手举过了头..." + userId);
+            print("测试." + userId);
+
+        }
+        //手左滑
+        if (gesture == "interact_left")
+        {
+
+        }
+        //手右滑
+        if (gesture == "interact_right")
+        {
+
+        }
+        ////////////交互////////////
+
+        //爆气，加buff
+        if (gesture == "powerup")
+        {
+
+        }
+        //防御
+        if (gesture == "defend")
+        {
+
+        }
+        //小技能：激光
+        if (gesture == "attack_1")
+        {
+
+        }
+        //小技能：龟派气功
+        if (gesture == "attack_2")
+        {
+
+        }
+        //大技能
+        if (gesture == "attack_3")
+        {
+
         }
         return true;
 		//throw new System.NotImplementedException();
