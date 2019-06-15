@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
 {
+    public ParticleSystem angry;
+    public ParticleSystem damage;
+    public ParticleSystem light;
+    public ParticleSystem lightBackgroung;
+    public ParticleSystem defend;
+    public ParticleSystem red;
+    public ParticleSystem orange;
+    public ParticleSystem yellow;
+    public ParticleSystem green;
+    public ParticleSystem grey;
+    public ParticleSystem blue;
+    public ParticleSystem purple;
+    public ParticleSystem rainbowBackground;
+    private float time = 0;
     public P1 p1;
 
 	//动作姿态完成
@@ -40,17 +54,18 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
         //爆气，加buff
         if (gesture == "powerup")
         {
-
+            angry.Play();
         }
         //防御
         if (gesture == "defend")
         {
-
+            defend.Play();
         }
         //小技能：激光
         if (gesture == "attack_1")
         {
-
+            light.Play();
+            lightBackgroung.Play();
         }
         //小技能：龟派气功
         if (gesture == "attack_2")
@@ -60,6 +75,14 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
         //大技能
         if (gesture == "attack_3")
         {
+            red.Play();
+            yellow.Play();
+            orange.Play();
+            green.Play();
+            grey.Play();
+            blue.Play();
+            purple.Play();
+            rainbowBackground.Play();
 
         }
         return true;
@@ -71,9 +94,19 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
 
 	}
 	void Start () {
-
-	}
+        defend.Pause();
+        red.Pause();
+        yellow.Pause();
+        orange.Pause();
+        green.Pause();
+        grey.Pause();
+        blue.Pause();
+        purple.Pause();
+        rainbowBackground.Pause();
+        light.Pause();
+        lightBackgroung.Pause();
+    }
 	void Update () {
-
-	}
+        
+    }
 }
