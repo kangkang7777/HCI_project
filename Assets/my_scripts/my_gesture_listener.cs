@@ -42,12 +42,12 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
         //手左滑
         if (gesture == "interact_left")
         {
-
+            print("左." + userId);
         }
         //手右滑
         if (gesture == "interact_right")
         {
-
+            print("右." + userId);
         }
         ////////////交互////////////
 
@@ -70,7 +70,7 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
         //小技能：龟派气功
         if (gesture == "attack_2")
         {
-
+            print("龟派气功" + userId);
         }
         //大技能
         if (gesture == "attack_3")
