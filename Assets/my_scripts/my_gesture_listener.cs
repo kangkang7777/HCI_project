@@ -17,18 +17,23 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
     public ParticleSystem blue;
     public ParticleSystem purple;
     public ParticleSystem rainbowBackground;
-    private float time = 0;
-    public P1 p1;
+    public ParticleSystem bo;
 
-	//动作姿态完成
-	public bool GestureCompleted(long userId, int userIndex, string gesture, float confidence)
+    public ParticleSystem emeryDamage;
+
+    public P1 p1;
+    public AudioSource attack1;
+    public AudioSource attack2;
+    public AudioSource attack3;
+    public AudioSource shield;
+    public AudioSource buff;
+
+    private float timer1 = 0;
+    private float timer2 = -20;
+
+    //动作姿态完成
+    public bool GestureCompleted(long userId, int userIndex, string gesture, float confidence)
 	{
-		//姿势检测后触发的事件在这里写
-		if (gesture == "touch_jj") 
-		{
-			print("摸鸡鸡..."+userId);
-            p1.Laser();
-		}
 
         //相同gesture识别时间需要有间隔
         ////////////交互////////////
@@ -55,22 +60,33 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
         if (gesture == "powerup")
         {
             angry.Play();
+            buff.Play();
+            p1.Buff();
         }
         //防御
         if (gesture == "defend")
         {
             defend.Play();
+            shield.Play();
+            timer2 = timer1;
         }
         //小技能：激光
         if (gesture == "attack_1")
         {
             light.Play();
             lightBackgroung.Play();
+            attack1.Play();
+            p1.Attack1();
+            emeryDamage.Play();
         }
         //小技能：龟派气功
         if (gesture == "attack_2")
         {
             print("龟派气功" + userId);
+            bo.Play();
+            attack2.Play();
+            p1.Attack2();
+            emeryDamage.Play();
         }
         //大技能
         if (gesture == "attack_3")
@@ -83,7 +99,9 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
             blue.Play();
             purple.Play();
             rainbowBackground.Play();
-
+            attack3.Play();
+            p1.Attack3();
+            emeryDamage.Play();
         }
         return true;
 		//throw new System.NotImplementedException();
@@ -107,6 +125,10 @@ public class my_gesture_listener : MonoBehaviour, VisualGestureListenerInterface
         lightBackgroung.Pause();
     }
 	void Update () {
-        
+        timer1 += Time.deltaTime;
+        if ((timer1 - 1) <= timer2)
+            p1.isDefend = 1;
+        else p1.isDefend = 0;
+
     }
 }

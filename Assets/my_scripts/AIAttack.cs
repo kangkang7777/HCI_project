@@ -6,6 +6,8 @@ public class AIAttack : MonoBehaviour
 {
     public ParticleSystem light;
     public ParticleSystem angry;
+    public P1 p1;
+    private float attack = 10.0f;
 
     private float time1 = 0;
     private float time2 = 0;
@@ -24,11 +26,14 @@ public class AIAttack : MonoBehaviour
         {
             time1 = 0;
             light.Play();
+            if(p1.isDefend == 0)
+                p1.hp -= attack * 10;
         }
         if (time2 > 10.0f)
         {
             time2 = 0;
             angry.Play();
+            attack *= 1.2f;
         }
     }
 }
